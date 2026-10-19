@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>商品图片 · 电商图片提取器</title>
+  <link rel="stylesheet" href="gallery.css">
+  <script src="gallery.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">▦</span><span>电商图片提取器</span></div>
+    <span class="topbar-note">商品图片工作台</span>
+  </header>
+  <main class="shell">
+    <section class="intro">
+      <div>
+        <p class="eyebrow">IMAGE COLLECTION</p>
+        <h1>挑出你需要的图片</h1>
+        <p class="subtitle" id="source">正在读取商品页图片…</p>
+      </div>
+      <div class="stat"><strong id="total-count">0</strong><span>张图片</span></div>
+    </section>
+    <section class="toolbar" aria-label="图片操作">
+      <div class="selection-actions">
+        <button id="select-all" class="text-button" type="button">全选</button>
+        <button id="invert" class="text-button" type="button">反选</button>
+        <span class="divider" aria-hidden="true"></span>
+        <span id="selected-count" aria-live="polite">已选 0 张</span>
+      </div>
+      <button id="download" class="primary-button" type="button" disabled>下载选中图片 <span aria-hidden="true">↓</span></button>
+    </section>
+    <div id="progress-panel" class="progress-panel" hidden role="status" aria-live="polite">
+      <div class="progress-head"><span id="progress-label">准备下载…</span><strong id="progress-number">0 / 0</strong></div>
+      <progress id="progress" value="0" max="1"></progress>
+      <p id="result"></p>
+    </div>
+    <div id="empty" class="empty" hidden>没有找到可展示的商品图片。请返回商品详情页，再点击「获取图片」。</div>
+    <section id="grid" class="grid" aria-label="提取到的图片"></section>
+  </main>
+</body>
+</html>
